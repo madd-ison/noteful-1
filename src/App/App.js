@@ -6,6 +6,7 @@ import NoteListMain from '../NoteListMain/NoteListMain'
 import NotePageMain from '../NotePageMain/NotePageMain'
 import NotePageNav from '../NotePageNav/NotePageNav'
 import { Route, Switch, Link } from 'react-router-dom';
+import ApiContext from '../ApiContext';
 
 class App extends React.Component {
   state = STORE;
