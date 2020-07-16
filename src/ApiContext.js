@@ -8,4 +8,7 @@ const ApiContext = React.createContext({
   deleteNote: () => {},
 })
 
-export default Context;
+export const ApiProvider = ApiContext.Provider
+export const ApiConsumer = ApiContext.Consumer
+
+export default ApiContext;
