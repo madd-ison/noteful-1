@@ -94,6 +94,7 @@ handleDeleteNote = noteId => {
               component={NotePageNav}
               />
                <Route
+                exact
                 path='/add-note'
                 component={NotePageNav}
                 />
@@ -112,10 +113,12 @@ handleDeleteNote = noteId => {
             path='/notes/:noteId'
             component={NotePageMain}/>
           <Route
+              exact
               path='/add-folder'
               component={AddFolder}
             />
             <Route
+              exact
               path='/add-note'
               component={AddNote}
              />

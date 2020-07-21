@@ -3,6 +3,7 @@ import React from 'react';
 import './NoteListNav.css'
 import { Link } from 'react-router-dom';
 import ApiContext from '../ApiContext';
+import AddFolder from '../AddFolder/AddFolder';
 
 
 
@@ -28,7 +29,7 @@ class NoteListNav extends React.Component {
             )
           })}
         </ul>
-        <button>New Folders</button>
+        <AddFolder />
       </div>
     );
   }

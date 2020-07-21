@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Note.css';
 import ApiContext, { ApiConsumer } from '../ApiContext';
+import PropTypes from 'prop-types'
 import config from '../config';
 
 function formatDate(date) {
@@ -66,3 +67,15 @@ class Note extends React.Component {
 }
 
 export default Note;
+
+Note.propTypes = {
+	notes: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.string.isRequired,
+			id_folder: PropTypes.string.isRequired,
+			name: PropTypes.string.isRequired,
+			content: PropTypes.string.isRequired,
+			modified: PropTypes.instanceOf(Date).isRequired
+		})
+	)
+};

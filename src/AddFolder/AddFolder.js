@@ -3,6 +3,7 @@ import Form from '../Form'
 import ApiContext from '../ApiContext'
 import config from '../config'
 import './AddFolder.css'
+import FolderValidation from './FolderValidation'
 
 export default class AddFolder extends Component {
   static defaultProps = {
@@ -40,6 +41,7 @@ export default class AddFolder extends Component {
 
   render() {
     return (
+      <FolderValidation>
       <section className='AddFolder'>
         <h2>Create a folder</h2>
         <Form onSubmit={this.handleSubmit}>
@@ -56,6 +58,7 @@ export default class AddFolder extends Component {
           </div>
         </Form>
       </section>
+      </FolderValidation>
     )
   }
 }
