@@ -10,6 +10,10 @@ import AddFolder from '../AddFolder/AddFolder';
 class NoteListNav extends React.Component {
   static contextType = ApiContext;
 
+  handleAddFolder() {
+
+  }
+
   render() {
     const { folders=[], notes=[] } = this.context
     return (
@@ -29,7 +33,7 @@ class NoteListNav extends React.Component {
             )
           })}
         </ul>
-        <button>New Folder</button>
+        <button onClick={this.handleAddFolder}>New Folder</button>
       </div>
     );
   }

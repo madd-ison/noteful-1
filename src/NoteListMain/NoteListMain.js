@@ -18,6 +18,10 @@ class NoteListMain extends React.Component {
     return notesArray
   }
 
+  handleAddNote() {
+
+  }
+
   render() {
     const notes = this.getNotesForFolder(this.context.notes)
     return (
@@ -30,7 +34,7 @@ class NoteListMain extends React.Component {
             )
           })}
         </ul>
-        <button>New Note</button>
+        <button onClick={this.handleAddNote}>New Note</button>
       </div>
     );
   }
