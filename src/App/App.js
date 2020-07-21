@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import STORE from '../dummy-store'
 import NoteListNav from '../NoteListNav/NoteListNav'
 import NoteListMain from '../NoteListMain/NoteListMain'
 import NotePageMain from '../NotePageMain/NotePageMain'
 import NotePageNav from '../NotePageNav/NotePageNav'
+import AddFolder from '../AddFolder/AddFolder'
+import AddNote from '../AddNote/AddNote'
 import { Route, Switch, Link } from 'react-router-dom';
 import { ApiProvider } from '../ApiContext';
 import config from '../config';
+import HandleError from '../HandleError';
 
 class App extends React.Component {
   state = {
@@ -36,6 +38,24 @@ class App extends React.Component {
         });
 }
 
+handleAddFolder = folder => {
+  this.setState({
+    folders: [
+      ...this.state.folders,
+      folder
+    ]
+  })
+}
+
+handleAddNote = note => {
+  this.setState({
+    notes: [
+      ...this.state.notes,
+      note
+    ]
+  })
+}
+
 handleDeleteNote = noteId => {
   this.setState({
       notes: this.state.notes.filter(note => note.id !== noteId)
@@ -49,6 +69,7 @@ handleDeleteNote = noteId => {
       deleteNote: this.handleDeleteNote
   }; 
     return (
+      <HandleError>
       <ApiProvider value={value}>
       <div className="App">
         <header className="App-header">
@@ -72,6 +93,10 @@ handleDeleteNote = noteId => {
               path='/notes/:noteId'
               component={NotePageNav}
               />
+               <Route
+                path='/add-note'
+                component={NotePageNav}
+                />
         </div>
         <main>
           <Route 
@@ -86,10 +111,19 @@ handleDeleteNote = noteId => {
             exact
             path='/notes/:noteId'
             component={NotePageMain}/>
+          <Route
+              path='/add-folder'
+              component={AddFolder}
+            />
+            <Route
+              path='/add-note'
+              component={AddNote}
+             />
         </main>
             </div>
       </div>
       </ApiProvider>
+      </HandleError>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Note.css';
-import ApiContext from '../ApiContext';
+import ApiContext, { ApiConsumer } from '../ApiContext';
 import config from '../config';
 
 function formatDate(date) {
