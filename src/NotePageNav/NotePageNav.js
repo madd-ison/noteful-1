@@ -8,19 +8,18 @@ class NotePageNav extends React.Component {
 
   render() {
 
-    const selectedFolderId = this.context.notes.find(
-      note => note.id === this.props.match.params.noteId
-    ).folderId
+    const selectedNote = this.context.notes.find(
+      note => note.id === this.props.match.params.noteId)
 
-    const selectedFolder = this.context.folders.find(
-      folder => folder.id === selectedFolderId
-    )
+    const selectedFolder = selectedNote ? this.context.folders.find(
+      folder => folder.id === selectedNote.folderId
+    ) : null
 
     return (
       <div className="Sidebar">
 
         <Link to='/'>Go Back</Link>
-        <h2>Current Folder: {selectedFolder.name}</h2>
+       {selectedFolder && <h2>Current Folder: {selectedFolder.name}</h2>}
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router'
 import Note from '../Note/Note';
 import './NoteListMain.css'
 import ApiContext from '../ApiContext';
@@ -18,8 +19,8 @@ class NoteListMain extends React.Component {
     return notesArray
   }
 
-  handleAddNote() {
-
+  handleAddNote = () => {
+    this.props.history.push('/add-note')
   }
 
   render() {
@@ -44,4 +45,4 @@ NoteListMain.defaultProps = {
   notes: []
 }
 
-export default NoteListMain;
+export default withRouter(NoteListMain);

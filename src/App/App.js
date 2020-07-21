@@ -66,7 +66,9 @@ handleDeleteNote = noteId => {
     const value = {
       notes: this.state.notes,
       folders: this.state.folders,
-      deleteNote: this.handleDeleteNote
+      deleteNote: this.handleDeleteNote,
+      addFolder: this.handleAddFolder,
+      addNote: this.handleAddNote
   }; 
     return (
       <HandleError>
@@ -98,6 +100,10 @@ handleDeleteNote = noteId => {
                 path='/add-note'
                 component={NotePageNav}
                 />
+                <Route 
+                  exact
+                  path='/add-folder'
+                  component={NotePageNav} />
         </div>
         <main>
           <Route 

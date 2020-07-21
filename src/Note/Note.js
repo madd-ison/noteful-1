@@ -43,6 +43,7 @@ class Note extends React.Component {
       })
       .then(() => {
         this.context.deleteNote(noteId)
+        this.props.history.push('/')
       })
       .catch(error => {
         console.error({ error })
@@ -55,14 +56,13 @@ class Note extends React.Component {
       <li className="Note">
         <Link to={`/notes/${this.props.id}`}>{this.props.name}</Link>
         <div>
-          <p>Last modified: {modified}</p>
+            <p>Last modified: {modified}</p>
 
           <button onClick={this.handleClickDelete}>Delete Note</button>
         </div>
       </li>
     );
   }
-
 }
 
 export default Note;

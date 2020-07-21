@@ -2,6 +2,7 @@
 import React from 'react';
 import './NoteListNav.css'
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router'
 import ApiContext from '../ApiContext';
 import AddFolder from '../AddFolder/AddFolder';
 
@@ -10,8 +11,9 @@ import AddFolder from '../AddFolder/AddFolder';
 class NoteListNav extends React.Component {
   static contextType = ApiContext;
 
-  handleAddFolder() {
-
+  handleAddFolder = () => {
+    console.log('hi')
+    this.props.history.push('/add-folder')
   }
 
   render() {
@@ -43,4 +45,4 @@ NoteListNav.defaultProps = {
   folders: []
 }
 
-export default NoteListNav;
+export default withRouter(NoteListNav);
