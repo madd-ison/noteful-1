@@ -29,7 +29,7 @@ class NoteListNav extends React.Component {
             )
           })}
         </ul>
-        <AddFolder />
+        <button>New Folder</button>
       </div>
     );
   }
