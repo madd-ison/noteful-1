@@ -15,7 +15,6 @@ class NoteListNav extends React.Component {
   }
 
   render() {
-    const { folders=[], notes=[] } = this.context
     return (
       <div className="note-list-nav">
         <h2>Folders</h2>

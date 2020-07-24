@@ -6,7 +6,7 @@ import NotePageMain from '../NotePageMain/NotePageMain'
 import NotePageNav from '../NotePageNav/NotePageNav'
 import AddFolder from '../AddFolder/AddFolder'
 import AddNote from '../AddNote/AddNote'
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { ApiProvider } from '../ApiContext';
 import config from '../config';
 import HandleError from '../HandleError';
