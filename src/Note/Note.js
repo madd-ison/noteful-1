@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Note.css';
-import ApiContext, { ApiConsumer } from '../ApiContext';
+import ApiContext from '../ApiContext';
+import {withRouter} from 'react-router'
 import PropTypes from 'prop-types'
 import config from '../config';
 
@@ -65,7 +66,7 @@ class Note extends React.Component {
   }
 }
 
-export default Note;
+export default withRouter(Note);
 
 Note.propTypes = {
 	notes: PropTypes.arrayOf(

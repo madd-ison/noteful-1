@@ -1,9 +1,9 @@
   
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Note from '../Note/Note';
 import './NotePageMain.css';
 import { findNote } from '../notes-helpers';
+import {withRouter} from 'react-router'
 import ApiContext from '../ApiContext';
 
 class NotePageMain extends React.Component {
@@ -11,7 +11,7 @@ class NotePageMain extends React.Component {
   static contextType = ApiContext
 
   handleDeleteNote = noteId => {
-    this.props.history.push(`/`)
+    //this.props.history.push(`/`)
   }
 
   render() {
@@ -37,4 +37,4 @@ class NotePageMain extends React.Component {
 
 }
 
-export default NotePageMain;
+export default withRouter(NotePageMain);

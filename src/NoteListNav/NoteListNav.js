@@ -4,8 +4,6 @@ import './NoteListNav.css'
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router'
 import ApiContext from '../ApiContext';
-import AddFolder from '../AddFolder/AddFolder';
-
 
 
 class NoteListNav extends React.Component {
