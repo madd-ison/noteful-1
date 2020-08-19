@@ -10,6 +10,7 @@ import { Route, Link } from 'react-router-dom';
 import { ApiProvider } from '../ApiContext';
 import config from '../config';
 import HandleError from '../HandleError';
+import { getNotes, getFolders, deleteNote, addNote, addFolder } from '../ApiRouter'
 
 class App extends React.Component {
   state = {
