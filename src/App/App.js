@@ -10,18 +10,17 @@ import { Route, Link } from 'react-router-dom';
 import { ApiProvider } from '../ApiContext';
 import config from '../config';
 import HandleError from '../HandleError';
-import { getNotes, getFolders, deleteNote, addNote, addFolder } from '../ApiRouter'
 
 class App extends React.Component {
   state = {
     notes: [],
     folders: []
-  };
+  }
 
   componentDidMount() {
     Promise.all([
-        fetch(`${config.API_ENDPOINT}/notes`),
-        fetch(`${config.API_ENDPOINT}/folders`)
+        fetch(`${config.NOTES_ENDPOINT}`),
+        fetch(`${config.FOLDERS_ENDPOINT}`)
     ])
         .then(([notesRes, foldersRes]) => {
             if (!notesRes.ok)
