@@ -22,8 +22,9 @@ class NotePageMain extends React.Component {
       <section className='Main'>
         <Note
           id={note.id}
-          name={note.name}
-          modified={note.modified}
+          name={note.title}
+          content={note.content}
+          modified={note.date_created}
           onDeleteNote={this.handleDeleteNote}
         />
         <div className='NotePageMain__content'>

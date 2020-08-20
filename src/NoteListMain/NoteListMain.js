@@ -30,7 +30,7 @@ class NoteListMain extends React.Component {
         <ul>
           {notes.map((note) => {
             return (
-              <Note modified={note.modified} key={note.id} id={note.id } name={note.name} />
+              <Note modified={note.date_created} key={note.id} id={note.id } name={note.title}/>
             )
           })}
         </ul>
