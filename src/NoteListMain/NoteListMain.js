@@ -11,7 +11,7 @@ class NoteListMain extends React.Component {
   getNotesForFolder = (notesArray) => {
     if (this.props.match.params.folderId) {
       return notesArray.filter((note) => {
-        return note.folderId === this.props.match.params.folderId
+        return note.folder_id === Number(this.props.match.params.folderId)
       })
     }
 

@@ -1,8 +1,8 @@
 export const findFolder = (folders=[], folderId) =>
   folders.find(folder => folder.id === folderId)
 
-export const findNote = (notes=[], noteId) =>
-  notes.find(note => note.id === noteId)
+export const findNote = (notes=[], noteId) => 
+  notes.find(note => note.id === Number(noteId))
 
 export const getNotesForFolder = (notes=[], folderId) => (
   (!folderId)
