@@ -10,7 +10,6 @@ class NoteListNav extends React.Component {
   static contextType = ApiContext;
 
   handleAddFolder = () => {
-    console.log('hi')
     this.props.history.push('/add-folder')
   }
 

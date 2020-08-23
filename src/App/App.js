@@ -19,8 +19,8 @@ class App extends React.Component {
 
   componentDidMount() {
     Promise.all([
-        fetch(`${config.API_ENDPOINT/api/notes}`),
-        fetch(`${config.API_ENDPOINT/api/folders}`)
+        fetch(`${config.API_ENDPOINT}/api/notes`),
+        fetch(`${config.API_ENDPOINT}/api/folders`)
     ])
         .then(([notesRes, foldersRes]) => {
             if (!notesRes.ok)
@@ -34,7 +34,7 @@ class App extends React.Component {
             this.setState({notes, folders});
         })
         .catch(error => {
-            console.error({error});
+        console.error({error});
         });
 }
 
